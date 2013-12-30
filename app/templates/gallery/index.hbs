@@ -1,0 +1,17 @@
+<header id="header">
+  <h1>#</h1>
+</header>
+
+<section id="gallery">
+  <ul id="images-list" class="loading">
+    {{#each models}}
+      <li id="{{id}}">
+        <figure>
+          <a href="{{images.standard_resolution.url}}">
+            <img src="{{images.low_resolution.url}}" alt="by @{{user.username}}">
+          </a>
+        </figure>
+      </li>
+    {{/each}}
+  </ul>
+</section>
