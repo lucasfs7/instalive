@@ -1,16 +1,105 @@
 @import 'vendor/bootstrap.min.css'
-@import 'base_view'
+@import 'variables'
+@import 'mixins'
+
+html,
+body
+  margin 0
+  padding 0
 
 body
-  background-color: whitesmoke
-  padding-top: 50px
+  background #eaeaea url(imgPath + "/pattern-bg.jpg") center repeat
+  font-family "Griffy", Helvetica, Arial, sans-serif
+  color #333
 
-  &.loading
-    .loading-indicator
-      display: block
+a
+  color #ed6633
+  text-decoration none
 
-.loading-indicator
-  display: none
-  float: right
-  color: white
-  line-height: 40px
+#app
+  width 100%
+  height 100%
+
+  #header
+    height 90px
+    margin appMargins
+    position relative
+
+    h1
+      height 90px
+      float left
+
+      img
+        height: 100%;
+        display: block;
+
+    h2
+      margin: 27px 0 0 20px;
+      float: left;
+
+  #gallery
+    margin 0 5px appMargins 5px
+    overflow hidden
+
+    #images-list
+      width 100%
+      list-style none
+      margin 0
+      padding 0
+
+      li
+        width 20%
+        float left
+
+        figure
+          margin 0
+          padding 0
+
+        a,
+        img
+          display block
+
+        img
+          width 90%
+          margin 5%
+          box-shadow 0 0 10px #000
+          grayscale 80%
+
+        &:hover img
+          grayscale 0
+          box-shadow 0 0 5px #000
+
+  #lightbox
+    background rgba(255, 255, 255, .8) url(imgPath + "/loading.gif") center no-repeat
+    width 100%
+    display none
+    position fixed
+    top 0
+    left 0
+    z-index 2
+
+    .close
+      position absolute
+      top 0
+      right 60px
+      font-size 100px
+
+    .content
+      width 600px
+      margin 0 auto
+      position relative
+      top -1000px
+
+      figure
+        width 100%
+
+        img
+          width 100%
+          box-shadow 0 0 10px #000
+
+        figcaption
+          padding 0 5px 5px 5px
+          display block
+          font-family Helvetica, Arial, sans-serif
+          font-size 12px
+          text-align center
