@@ -8,8 +8,8 @@ body
   padding 0
 
 body
-  background #eaeaea url(imgPath + "/pattern-bg.jpg") center repeat
-  font-family "Griffy", Helvetica, Arial, sans-serif
+  background #eaeaea
+  font-family 'lucida grande', Helvetica, Arial, sans-serif
   color #333
 
 a
@@ -67,37 +67,3 @@ a
         &:hover img
           bw 0
 
-  #lightbox
-    background rgba(255, 255, 255, .8) url(imgPath + "/loading.gif") center no-repeat
-    width 100%
-    display none
-    position fixed
-    top 0
-    left 0
-    z-index 2
-
-    .close
-      position absolute
-      top 0
-      right 60px
-      font-size 100px
-
-    .content
-      width 600px
-      margin 0 auto
-      position relative
-      top -1000px
-
-      figure
-        width 100%
-
-        img
-          width 100%
-          box-shadow 0 0 10px #000
-
-        figcaption
-          padding 0 5px 5px 5px
-          display block
-          font-family Helvetica, Arial, sans-serif
-          font-size 12px
-          text-align center
