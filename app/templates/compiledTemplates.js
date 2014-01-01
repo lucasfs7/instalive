@@ -5,7 +5,7 @@ var templates = {};
 templates["gallery/index"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
@@ -24,13 +24,11 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<header id=\"header\">\n  <h1>#";
-  if (stack1 = helpers.hashtag) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.hashtag; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  buffer += "<header id=\"header\">\n  <h1>#"
+    + escapeExpression(((stack1 = ((stack1 = depth0.params),stack1 == null || stack1 === false ? stack1 : stack1.hashtag)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</h1>\n</header>\n\n<section id=\"gallery\">\n  <ul id=\"images-list\">\n    ";
-  stack1 = helpers.each.call(depth0, depth0.models, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
+  stack2 = helpers.each.call(depth0, depth0.models, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  </ul>\n</section>\n";
   return buffer;
   });
